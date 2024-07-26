@@ -24,7 +24,7 @@ export const MobileStatementLandingText = () => {
             <Text>
                 {t('mobile-landing-text-part-one')}
             </Text>
-            <Box mt={8} display="flex" justifyContent="center" style={{ background: "#a83c2c", borderRadius: "5px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <Box mt={8} display="flex" justifyContent="center" style={{ background: "#a83c2c", borderRadius: "5px", display: "flex", justifyContent: "center", alignItems: "center", border: "2px black dashed"}}>
                 <QrScanner style={{ width: "250px", height: "250px" }}
                     delay={300}
                     onError={handleError}
