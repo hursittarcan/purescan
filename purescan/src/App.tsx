@@ -1,19 +1,36 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import SplashScreen from './components/SplashScreen';
-import Home from './pages/Home';
-import ScannerPage from './pages/ScannerPage';
+import {Box, ChakraProvider, useMediaQuery} from '@chakra-ui/react'
+import Header from "./components/Header.tsx";
+import {Footer} from "./components/Footer.tsx";
+import {StatementLandingText} from "./components/StatementLandingText.tsx";
+import './i18n';
+import {customChakraTheme} from "./styles/CustomChakraTheme.tsx";
+import {StatementTabs} from "./components/StatementTabs.tsx";
+import {MobileStatementLandingText} from "./components/MobileStatementLandingText.tsx";
 
-const App: React.FC = () => {
+function App() {
+    const [isMobile] = useMediaQuery("(max-width: 768px)");
+
     return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<SplashScreen />} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/scanner" element={<ScannerPage />} />
-            </Routes>
-        </Router>
+        <ChakraProvider theme={ customChakraTheme }>
+            <>
+                <Header style={{ boxShadow: "var(--chakra-shadows-sm)"}} />
+                {isMobile ? (
+                    <Box className="mobile-statement-container">
+                        <MobileStatementLandingText />
+                    </Box>
+                ) : (
+                    <div className="main-statement-landing-container">
+                        <StatementLandingText />
+                        <br />
+                        <div className="main-statement-tabs-container">
+                            ...
+                        </div>
+                    </div>
+                )}
+                <Footer className="footer"/>
+            </>
+        </ChakraProvider>
     );
-};
+}
 
 export default App;
