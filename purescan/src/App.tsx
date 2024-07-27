@@ -4,7 +4,6 @@ import {Footer} from "./components/Footer.tsx";
 import {StatementLandingText} from "./components/StatementLandingText.tsx";
 import './i18n';
 import {customChakraTheme} from "./styles/CustomChakraTheme.tsx";
-import {StatementTabs} from "./components/StatementTabs.tsx";
 import {MobileStatementLandingText} from "./components/MobileStatementLandingText.tsx";
 
 function App() {

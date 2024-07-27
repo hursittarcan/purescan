@@ -1,7 +1,6 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import QrScanner from 'react-qr-scanner';
-import {red} from "next/dist/lib/picocolors";
 
 export const MobileStatementLandingText = () => {
     const { t } = useTranslation();
